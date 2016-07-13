@@ -1,3 +1,5 @@
+// Setup Ports Heroku
+var PORT = process.env.PORT || 3000;
 const config = require('./config');
 var moment = require('moment');
 var express = require('express');
@@ -23,11 +25,8 @@ var db = mongoose.connection;
 
 app.use(express.static(__dirname + '/public'));
 
-// Setup Ports Heroku
-var PORT = process.env.PORT || 3000;
 
 // Blog & Auth Code ==========================
-var mongo = require('mongodb');
 
 var db = require('monk')(config.dbURI);
 
