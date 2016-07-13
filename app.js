@@ -20,7 +20,6 @@ var bcrypt = require('bcryptjs');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
-var db = require('monk')(config.dbURI);
 
 app.use(express.static(__dirname + '/public'));
 
@@ -28,6 +27,9 @@ app.use(express.static(__dirname + '/public'));
 var PORT = process.env.PORT || 3000;
 
 // Blog & Auth Code ==========================
+var mongo = require('mongodb');
+
+var db = require('monk')(config.dbURI);
 
 var routes = require('./routes/index3');
 var posts = require('./routes/posts');
